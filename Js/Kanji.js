@@ -101,14 +101,16 @@ export default class Kanji {
         this.numOfOnYomi = this.divInputOnYomi.querySelector('#numOfOnYomi');
         this.inputKunYomi = this.divInputKunYomi.querySelector('#inputKunYomi');
         this.inputOnYomi = this.divInputOnYomi.querySelector('#inputOnYomi');
-        this.labelInputKunYomi = this.divInputKunYomi.querySelector('#labelInputKunYomi');
-        this.labelInputOnYomi = this.divInputKunYomi.querySelector('#labelInputOnYomi');
+        // this.labelInputKunYomi = this.divInputKunYomi.querySelector('#labelInputKunYomi');
+        // this.labelInputOnYomi = this.divInputKunYomi.querySelector('#labelInputOnYomi');
+        this.labelInputKunYomi = document.querySelector('#labelInputKunYomi');
+        this.labelInputOnYomi = document.querySelector('#labelInputOnYomi');
         this.labelMeanings = document.querySelector('#labelMeanings');
         this.kanjiAsk = document.querySelector('#kanjiAsk');
         return true;
     }
 
-    AddEventListenerElements() {
+    async AddEventListenerElements() {
         // Usa bind(this) per i metodi della classe
         this.selectOptionsKanjiList.addEventListener("change", this.selectOptionsKanjiListSelectChange.bind(this));
         this.buttonAddKanjiList.addEventListener('click', this.AddKanjiListOnGroup.bind(this));
@@ -124,6 +126,7 @@ export default class Kanji {
         this.inputOnYomi.addEventListener('input', this.InputOnYomiOnChangeResetColor.bind(this));
         this.inputKunYomi.addEventListener('keydown', this.InputKunYomiOnPressEnther.bind(this));
         this.inputOnYomi.addEventListener('keydown', this.InputOnYomiOnPressEnther.bind(this));
+        return true;
     }
 
     selectOptionsKanjiListSelectChange(event) {
@@ -253,16 +256,20 @@ export default class Kanji {
     InputKunYomiHiddenShow() {
         if (this.divInputKunYomi.style.display === "none") {
             this.divInputKunYomi.style.display = "block"; // Mostra l'input
+            this.labelInputKunYomi.style.display = "block"; // Mostra il label
         } else {
             this.divInputKunYomi.style.display = "none"; // Nasconde l'input
+            this.labelInputKunYomi.style.display = "none"; // Nasconde il label
         }
     }
 
     InputOnYomiHiddenShow() {
         if (this.divInputOnYomi.style.display === "none") {
             this.divInputOnYomi.style.display = "block"; // Mostra l'input
+            this.labelInputOnYomi.style.display = "block"; // Mostra il label
         } else {
             this.divInputOnYomi.style.display = "none"; // Nasconde l'input
+            this.labelInputOnYomi.style.display = "none"; // Nasconde il label
         }
     }
 

@@ -1,16 +1,24 @@
-<div class="divContain">
-    <div class="row" style="margin-top: 2%"></div>
-    <div class="container text-center">
-        <div class="row align-items-start">
+<div class="divContain align-items-start justify-content-center">
+    <div class="row align-items-start justify-content-center" style="margin-top: 2%"></div>
+    <div class="container text-center justify-content-center">
+        <div class="row align-items-start justify-content-center">
+
+            <!-- Upload File -->
+            <div class="row align-items-start justify-content-center" style="margin-bottom: 2%">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputUploadFile" accept=".json">Upload</label>
+                    <input type="file" class="form-control" id="inputUploadFile">
+                </div>
+            </div>
+
             <!-- Switchs -->
-            <div class="row">
+            <div class="row align-items-start justify-content-center" style="margin-bottom: 2%">
                 <div class="col">
                     <div class="form-check form-switch">
                         <input id="checkboxSwitchMeanings" class="form-check-input" type="checkbox" role="switch" checked>
                         <label class="form-check-label" for="checkboxSwitchMeanings">Show meanings</label>
                     </div>
                 </div>
-
                 <div class="col">
                     <div class="form-check form-switch form-check-reverse">
                         <input id="checkboxSwitchITAMeanings" class="form-check-input" type="checkbox">
@@ -20,27 +28,25 @@
             </div>
             <div class="col" style="margin-bottom: 2%">
                 <!-- Kanji List Options -->
-                <div class="row">
-                    <select id="kanjiListSelectOptions" class="form-select form-select-lg mb-3 dropdown-menu-dark" 
-                    aria-label=".form-select-lg example">
-                        <option selected>Open this to select a list of Kanji.</option>
+                <div class="row align-items-start justify-content-center" style="margin-bottom: 2%">
+                    <select id="kanjiListSelectOptions" class="form-select" aria-label="Open this to select a list of Kanji.">
                         :|§Option_Select§|:
                     </select>
                 </div>
 
-                <div class="row">
+                <div class="row align-items-start justify-content-center" style="margin-bottom: 2%">
                     <!-- Button ADD and REMOVE -->
-                    <div class="row">
+                    <div class="row align-items-start justify-content-center" style="margin-bottom: 2%">
                         <div class="btn-group" role="group" aria-label="Basic outlined example">
                             <button id="buttonAddKanjiList" type="button" class="btn btn-outline-success">Add</button>
                             <button id="buttonRemoveKanjiList" type="button" class="btn btn-outline-danger">Remove</button>
                         </div>
                     </div>
 
-                    <div class="row" style="margin-top: 2%"></div>
+                    <div class="row align-items-start justify-content-center" style="margin-top: 2%"></div>
 
                     <!-- Checkbox(Yomi) and (Start/Stop) -->
-                    <div class="row">
+                    <div class="row align-items-start justify-content-center" style="margin-bottom: 2%">
                         <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
                             <input id="checkboxOnYomi" type="checkbox" class="btn-check" autocomplete="off" checked>
                             <label class="btn btn-outline-primary" for="checkboxOnYomi">On Yomi</label>
@@ -54,10 +60,9 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="row" style="margin-top: 2%"></div> -->
 
             <!-- List of Kanji List Added -->
-            <div class="col">
+            <div class="col" style="margin-bottom: 2%">
                 <ol id="kanjiListAddedOnTrainGroup" class="list-group list-group-numbered">
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                       <div class="ms-2 me-auto">
@@ -65,23 +70,22 @@
                       </div>
                       <span class="badge text-bg-primary rounded-pill"></span>
                     </li>
-                    <!-- :|§ListKanjiList§|: -->
                 </ol>
             </div>
         </div>
-        <div class="row" style="margin-top: 2%"></div>
+        <div class="row align-items-start justify-content-center" style="margin-top: 2%"></div>
         
-        <div class="row align-items-start">
+        <div class="row justify-content-center" style="margin-bottom: 2%">
             <!-- ProgressBar -->
-            <div class="row">
+            <div class="row align-items-start justify-content-center">
                 <div id="kanjiProgressBar" class="progress" role="progressbar" aria-label="Animated Success striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                     <div id="kanjiProgressBarProgress" class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 0%"></div>
                 </div>                    
             </div>
-            <div class="row" style="margin-top: 3%"></div>
+            <div class="row align-items-start justify-content-center" style="margin-top: 3%"></div>
 
             <!-- CountDid Kanji CountToDo ?Tooltip -->
-            <div class="row d-flex justify-content-center align-items-center border rounded bg-dark m-0 p-0" style="height: fit-content;">
+            <div class="row justify-content-center align-items-center border rounded bg-dark m-0 p-0">
                 <div class="col-auto"> 
                     <button type="button" class="btn btn-dark position-relative p-0">
                         <p id="btnXX" class="fs-3 m-0">📝</p>
@@ -90,7 +94,7 @@
                 </div>
                 <div class="col-auto">
                     <button type="button" class="btn btn-dark position-relative p-0">
-                        <p id="btnCross" class="m-0">❌</p>
+                        <p id="btnCross" class="m-0 fs-3">❌</p>
                         <span id="spanButtonCountKanjiAnswerWrong" class="position-absolute start-100 translate-middle badge rounded-pill bg-danger">0</span>
                     </button>
                 </div>
@@ -102,24 +106,24 @@
                 </div>
                 <div class="col-auto">
                     <button type="button" class="btn btn-dark position-relative p-0">
-                        <p id="btnCheck" class="m-0">✅</p>
+                        <p id="btnCheck" class="m-0 fs-3">✅</p>
                         <span id="spanButtonCountKanjiAnswerCorrectly" class="position-absolute start-100 translate-middle badge rounded-pill bg-success">0</span>
                     </button>
                 </div>
                 <div class="col-auto">
                     <button type="button" class="btn btn-dark position-relative p-0">
-                        <p id="btnFile" class="m-0">📑</p>
+                        <p id="btnFile" class="m-0 fs-3">📑</p>
                         <span id="spanButtonCountKanjiAnswerToDo" class="position-absolute start-100 translate-middle badge rounded-pill bg-secondary">0</span>
                     </button>
                 </div>
             </div>     
-            <div class="row" style="margin-top: 2%"></div>
+            <div class="row align-items-start justify-content-center" style="margin-top: 2%"></div>
 
             <!-- Label Meanings -->
-            <div class="row">
+            <div class="row align-items-start justify-content-center" tyle="margin-top: 2%">
                 <div class="col">
-                    <label id="labelInputOnYomi" for="formGroupExampleInput" class="form-label">
-                        <strong class="fs-3">On Yomi⬎</strong>
+                    <label id="labelInputOnYomi" for="inputOnYomi" class="form-label">
+                        <strong class="fs-3">OnYomi⬎</strong>
                     </label>
                 </div>
                 <div class="col">
@@ -129,13 +133,14 @@
                     </strong>
                 </div>
                 <div class="col">
-                    <label id="labelInputKunYomi" for="formGroupExampleInput" class="form-label">
-                        <strong class="fs-3">⬐Kun Yomi</strong>
+                    <label id="labelInputKunYomi" for="inputKunYomi" class="form-label">
+                        <strong class="fs-3">⬐KunYomi</strong>
                     </label>
                 </div>
             </div>
+            
             <!-- Input With Label in line -->
-            <div class="row">
+            <div class="row align-items-start justify-content-center" tyle="margin-top: 2%">
                 <div id="divInputOnYomi" class="col">
                     <label class="visually-hidden" for="autoSizingInputGroup">On Yomi</label>
                     <div class="input-group">
@@ -153,7 +158,7 @@
             </div>
 
             <!-- Input With Label -->
-            <!-- <div class="row">
+            <!-- <div class="row align-items-start justify-content-center" tyle="margin-top: 2%">
                 <div id="divInputKunYomi" class="col">
                     <label id="labelInputKunYomi" for="formGroupExampleInput" class="form-label fs-3">
                         <strong>Kun Yomi:</strong>
@@ -169,10 +174,10 @@
                 </div>
             </div> -->
         </div>
-        <div class="row" style="margin-top: 2%"></div>
+        <div class="row justify-content-center" style="margin-top: 2%"></div>
 
         <!-- Check Button -->
-        <div class="row align-items-start">
+        <div class="row align-items-start justify-content-center">
             <div class="col">
                 <button id="buttonSolutionKanji" type="button" class="btn btn-outline-secondary" disabled="true">Solution</button>
             </div>
@@ -180,71 +185,74 @@
                 <button id="buttonCheckKanji" type="button" class="btn btn-outline-warning" disabled="true">Check</button>
             </div>
         </div>
+        <div class="row align-items-start justify-content-center" style="margin-top: 2%"></div>
 
         <!-- Descriptions -->
-        <div class="row align-items-start">
-            <div class="container mt-5">
-                <div class="card">
-                    <div class="card-header bg-dark text-white">
-                        <h3>Kanji Learning Tool - FAQ</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="accordion" id="faqAccordion">
-            
-                            <!-- How does this tool work? -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                        How does this tool work?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        This tool helps you memorize Kanji readings (Kun Yomi & On Yomi) through interactive exercises.  
-                                        <ul>
-                                            <li>Select a Kanji list from the dropdown menu.</li>
-                                            <li>Click <strong>"Add"</strong> to include the Kanji set in your learning session.</li>
-                                            <li>With <strong>KunYomi</strong> or <strong>OnYomi</strong> buttons you can enable or disable them.</li>
-                                            <li>Press <strong>"Start/Stop"</strong> to begin or end a practice session.</li>
-                                            <li>Type the correct Kun Yomi or On Yomi in the input fields and press <strong>Enter</strong> or click <strong>Check</strong>.</li>
-                                            <li>The progress bar and the icons in the center tracks your learning progress.</li>
-                                        </ul>
+        <div class="row margin-bottom justify-content-center">
+            <div class="row align-items-start">
+                <div class="container mt-5">
+                    <div class="card">
+                        <div class="card-header bg-dark text-white">
+                            <h3>Kanji Learning Tool - FAQ</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="accordion" id="faqAccordion">
+                
+                                <!-- How does this tool work? -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                            How does this tool work?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            This tool helps you memorize Kanji readings (Kun Yomi & On Yomi) through interactive exercises.  
+                                            <ul>
+                                                <li>Select a Kanji list from the dropdown menu.</li>
+                                                <li>Click <strong>"Add"</strong> to include the Kanji set in your learning session.</li>
+                                                <li>With <strong>KunYomi</strong> or <strong>OnYomi</strong> buttons you can enable or disable them.</li>
+                                                <li>Press <strong>"Start/Stop"</strong> to begin or end a practice session.</li>
+                                                <li>Type the correct Kun Yomi or On Yomi in the input fields and press <strong>Enter</strong> or click <strong>Check</strong>.</li>
+                                                <li>The progress bar and the icons in the center tracks your learning progress.</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-            
-                            <!-- Why did I make this tool? -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                        Why did I make this tool?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        Learning Kanji can be difficult, especially when trying to memorize different readings.  
-                                        This tool provides an interactive way to reinforce knowledge through repetition and testing.
-                                        <br><br>
-                                        It is designed for those who want a structured yet flexible way to study Kanji, track progress,  
-                                        and focus on Kun Yomi and On Yomi pronunciations efficiently.
+                
+                                <!-- Why did I make this tool? -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                            Why did I make this tool?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Learning Kanji can be difficult, especially when trying to memorize different readings.  
+                                            This tool provides an interactive way to reinforce knowledge through repetition and testing.
+                                            <br><br>
+                                            It is designed for those who want a structured yet flexible way to study Kanji, track progress,  
+                                            and focus on Kun Yomi and On Yomi pronunciations efficiently.
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                             <!-- Bug and Report? -->
-                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                        Did you found a Bug or want a new features?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        If you've found a bug or have a suggestion for a new feature,
-                                        please let me know by opening an issue on the website's
-                                        GitHub repository: 
-                                        <a href="https://github.com/Arutosio/MyWebPage." class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Arutosio WebPage</a> 
-                                        <br>
-                                        This is the best way to ensure your feedback is tracked and addressed.  Thank you for your help in making the website better!
+                                    <!-- Bug and Report? -->
+                                    <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                            Did you found a Bug or want a new features?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            If you've found a bug or have a suggestion for a new feature,
+                                            please let me know by opening an issue on the website's
+                                            GitHub repository: 
+                                            <a href="https://github.com/Arutosio/MyWebPage." class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Arutosio WebPage</a> 
+                                            <br>
+                                            This is the best way to ensure your feedback is tracked and addressed.  Thank you for your help in making the website better!
+                                        </div>
                                     </div>
                                 </div>
                             </div>
